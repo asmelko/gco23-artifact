@@ -22,7 +22,7 @@ auto my_make_bag(layout_t layout)
     volatile_shower = ptr;
 
     char *tmp = volatile_shower;
-    std::unique_ptr<char> unique(tmp);
+    std::unique_ptr<char[]> unique(tmp);
 
     return std::make_tuple(noarr::make_bag(layout, tmp), std::move(unique));
 }
@@ -247,7 +247,7 @@ void transpose_hand(size_t I, size_t J, A_t A, B_t B, const char *__restrict a, 
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
 
-    std::cout << "matmul,hand," << elapsed_seconds.count() << std::endl;
+    std::cout << "transpose,hand," << elapsed_seconds.count() << std::endl;
 }
 
 template <typename A_t, typename B_t>
@@ -266,7 +266,7 @@ void transpose_noarr(A_t A, B_t B, const char *__restrict a, char *__restrict b)
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
 
-    std::cout << "matmul,traverser," << elapsed_seconds.count() << std::endl;
+    std::cout << "transpose,traverser," << elapsed_seconds.count() << std::endl;
 }
 
 void transpose(size_t I, size_t J, size_t iters)

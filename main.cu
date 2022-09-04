@@ -22,7 +22,7 @@ auto my_make_bag(layout_t layout)
     volatile_shower = ptr;
 
     char *tmp = volatile_shower;
-    std::unique_ptr<char> unique(tmp);
+    std::unique_ptr<char[]> unique(tmp);
 
     return std::make_tuple(noarr::make_bag(layout, tmp), std::move(unique));
 }
