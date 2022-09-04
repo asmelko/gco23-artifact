@@ -1,10 +1,7 @@
-#include <utility>
-#include "noarr-structures/include/noarr/structures/blocks.hpp"
-#include "noarr-structures/include/noarr/structures/traverser.hpp"
-#include "noarr-structures/include/noarr/structures/reorder.hpp"
-#include "noarr-structures/include/noarr/structures/funcs.hpp"
 #include "noarr-structures/include/noarr/structures.hpp"
 #include "noarr-structures/include/noarr/structures_extended.hpp"
+#include "noarr-structures/include/noarr/structures/shortcuts.hpp"
+#include "noarr-structures/include/noarr/structures/traverser.hpp"
 
 #include <iostream>
 #include <chrono>
@@ -74,7 +71,7 @@ __global__ void hadamard_noarr(A_t A, const char *__restrict__ a, const char *__
     auto AA = A ^ noarr::fix<'n'>(threadIdx.x / warpSize);
 
     noarr::traverser(AA).order(noarr::merge_blocks<'i', 'j', 'a'>() ^
-                               noarr::into_blocks<'a', 'a', 'q'>(warpSize) ^ noarr::fix<'q'>(threadIdx.x % warpSize) ^ // < noarr::step so far
+                               noarr::step<'a'>(threadIdx.x % warpSize, warpSize) ^
                                noarr::reorder<'a'>())
         .for_each([=](auto idx)
                   {

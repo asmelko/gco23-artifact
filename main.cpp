@@ -1,12 +1,8 @@
-#include <utility>
-#include "noarr-structures/include/noarr/structures/blocks.hpp"
-#include "noarr-structures/include/noarr/structures/traverser.hpp"
-#include "noarr-structures/include/noarr/structures/reorder.hpp"
-#include "noarr-structures/include/noarr/structures/funcs.hpp"
-#include "noarr-structures/include/noarr/structures/zcurve.hpp"
-#include "noarr-structures/include/noarr/structures/shortcuts.hpp"
 #include "noarr-structures/include/noarr/structures.hpp"
 #include "noarr-structures/include/noarr/structures_extended.hpp"
+#include "noarr-structures/include/noarr/structures/shortcuts.hpp"
+#include "noarr-structures/include/noarr/structures/traverser.hpp"
+#include "noarr-structures/include/noarr/structures/zcurve.hpp"
 
 #include <iostream>
 #include <chrono>

@@ -8,7 +8,7 @@ This package contains scripts that perform following measurements:
 
 * Matrix multiplication
 * Stencil computation
-* Matrix copy
+* Matrix copy transposition
 * CUDA Hadamard product
 
 ## Requirements for running the measurements
