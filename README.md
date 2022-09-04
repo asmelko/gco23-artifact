@@ -16,6 +16,7 @@ This package contains scripts that perform following measurements:
 Hardware requirements:
 
 * To replicate all tests, a CUDA-compatible GPU is required.
+* Some tests allocate ~11GB of data, at least 12GB RAM is recommend. 
 
 Software requirements:
 
