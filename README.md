@@ -1,6 +1,6 @@
 # Replication package: Noarr Layout Traversal
 
-This is a replication package containing code and measurements scripts related to a GCO paper titled:  **A Pure C++ Approach to Optimal Traversal of Data Structures**
+This is a replication package containing code and measurements scripts related to a CGO paper titled:  **A Pure C++ Approach to Optimal Traversal of Data Structures**
 
 ## Measurements Overview
 
